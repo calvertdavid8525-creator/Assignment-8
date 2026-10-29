@@ -1,12 +1,4 @@
-# Use at least two files.
-# • Use one function for each of the first three options.
-# • Use meaningful variable and method names.
-# • Format monetary amounts as dollar values with two decimal places.
-# • Make sure deposits and withdrawals change the account balance correctly.
-# • Test your program with several deposits, withdrawals, invalid choices, and attempted
-# withdrawals that exceed the account balance.
-# • Your output does not need to match the sample session exactly, but it should provide
-# equivalent information.
+#intro
 from Assignment_8.Assignment_8_Functions import BankAccount
 print("Welcome to the Bank of David")
 customer_name = input("Please enter your name: ")
@@ -14,6 +6,7 @@ customer_name = input("Please enter your name: ")
 user_choice = 0
 bank_account = BankAccount(customer_name)
 
+#display choices for user
 while user_choice !=4:
     print()
     print("1. Make a deposit")
@@ -24,20 +17,25 @@ while user_choice !=4:
 
     user_choice = int(input("Please choose an option: "))
     print()
+
+#user deposit
     if user_choice == 1:
         print("Deposit selected.")
         user_deposit = float(input("Enter deposit amount: "))
         bank_account.deposit(user_deposit)
-    
+
+#user withdrawal
     elif user_choice == 2:
         print("Withdrawal selected.")
         user_withdraw = float(input("Enter withdrawal amount: "))
         bank_account.withdraw(user_withdraw)
 
+#user displays account info
     elif user_choice == 3:
         print("View account information selected.")
         bank_account.view()
 
+#Exit
     elif user_choice == 4:
         print("Thank you! Have a great day!")
     else:
